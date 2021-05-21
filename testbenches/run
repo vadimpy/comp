@@ -1,0 +1,5 @@
+#!/bin/bash
+export PROJECT_DIR=~/Documents/fpga/iocomp
+python3 $PROJECT_DIR/pyutils/compile.py
+iverilog $PROJECT_DIR/cpu/*.v $PROJECT_DIR/mem/*.v $PROJECT_DIR/comp/*.v $PROJECT_DIR/testbenches/tb1.v $PROJECT_DIR/testbenches/clockgen.v -o test
+./test
